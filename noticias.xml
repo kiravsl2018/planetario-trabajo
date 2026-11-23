@@ -2,30 +2,30 @@
 <rss version="2.0">
   <channel>
     <title>Noticias del Planetario Estrella Polar</title>
-    <link>https://kiravsl2018.github.io/planetario-modelo/</link>
+    <link>https://kiravsl2018.github.io/planetario-estrella-polar/</link>
     <description>Novedades del planetario: sesiones nuevas, eventos y cambios en la web.</description>
     <language>es-es</language>
     <item>
       <title>Nuevas páginas: sistema solar, mitos y galería</title>
-      <link>https://kiravsl2018.github.io/planetario-modelo/sistema-solar.html</link>
+      <link>https://kiravsl2018.github.io/planetario-estrella-polar/sistema-solar.html</link>
       <description>La web crece con tres secciones nuevas sobre los planetas, las leyendas de las estrellas y una galería de ilustraciones.</description>
       <pubDate>Thu, 12 Nov 2026 12:00:00 +0100</pubDate>
     </item>
     <item>
       <title>Nueva sesión: las constelaciones de invierno</title>
-      <link>https://kiravsl2018.github.io/planetario-modelo/sesiones.html</link>
+      <link>https://kiravsl2018.github.io/planetario-estrella-polar/sesiones.html</link>
       <description>Estrenamos una sesión dedicada a Orión, Tauro y Géminis.</description>
       <pubDate>Mon, 02 Nov 2026 10:00:00 +0100</pubDate>
     </item>
     <item>
       <title>Noche de las Leónidas</title>
-      <link>https://kiravsl2018.github.io/planetario-modelo/constelaciones.html</link>
+      <link>https://kiravsl2018.github.io/planetario-estrella-polar/constelaciones.html</link>
       <description>El 17 de noviembre observamos la lluvia de estrellas desde la terraza.</description>
       <pubDate>Wed, 04 Nov 2026 18:30:00 +0100</pubDate>
     </item>
     <item>
       <title>Ya puedes reservar desde la web</title>
-      <link>https://kiravsl2018.github.io/planetario-modelo/contacto.html</link>
+      <link>https://kiravsl2018.github.io/planetario-estrella-polar/contacto.html</link>
       <description>Hemos añadido un formulario para reservar tu visita.</description>
       <pubDate>Thu, 05 Nov 2026 09:00:00 +0100</pubDate>
     </item>
