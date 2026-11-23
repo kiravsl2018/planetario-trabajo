@@ -1,8 +1,5 @@
-/* =========================================
-   Hoja de estilos del Planetario Estrella Polar
-   ========================================= */
+/* Estilos del Planetario Estrella Polar */
 
-/* 1. Variables: los colores y medidas que se repiten */
 :root {
   --color-fondo: #0b0e2a;
   --color-fondo-claro: #1b1f4b;
@@ -12,12 +9,10 @@
   --radio: 12px;
 }
 
-/* 2. Modelo de caja: el ancho incluye padding y borde */
 * {
   box-sizing: border-box;
 }
 
-/* 3. Estilos generales */
 body {
   margin: 0;
   font-family: 'Poppins', system-ui, Arial, sans-serif;
@@ -31,6 +26,10 @@ img {
   height: auto;
 }
 
+main img {
+  border-radius: var(--radio);
+}
+
 a {
   color: var(--color-principal);
 }
@@ -39,12 +38,12 @@ h1,
 h2,
 h3 {
   color: var(--color-principal);
-  line-height: 1.2;
 }
 
-/* 4. Cabecera */
+/* cabecera */
 header {
-  background: linear-gradient(to right, #1b1f4b, #3a2e6e);
+  background-color: #1b1f4b;
+  background-image: linear-gradient(to right, #1b1f4b, #3a2e6e);
   padding: 20px;
   text-align: center;
 }
@@ -54,7 +53,7 @@ header {
   animation: flotar 4s ease-in-out infinite;
 }
 
-/* 5. Barra de navegación: Flexbox + sticky */
+/* menú */
 nav {
   position: sticky;
   top: 0;
@@ -87,21 +86,19 @@ nav a:hover {
   color: var(--color-fondo);
 }
 
-/* Página en la que estás */
 nav a.activo {
   border: 2px dashed var(--color-principal);
 }
 
-/* Foco visible al navegar con el teclado (Tab) */
 a:focus,
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
   outline: 3px solid var(--color-secundario);
+  outline-offset: 2px;
 }
 
-/* 6. Contenido principal */
 main {
   max-width: 1000px;
   margin: 0 auto;
@@ -112,14 +109,7 @@ section {
   margin-bottom: 40px;
 }
 
-/* Portada: el fondo de estrellas se queda quieto al hacer scroll */
-.inicio {
-  background-image: url("../img/cielo.webp");
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-/* La cúpula del planetario: solo se redondean las esquinas de arriba */
+/* portada */
 .cupula {
   background-image: url("../img/cielo.webp");
   background-size: cover;
@@ -130,7 +120,15 @@ section {
   text-align: center;
 }
 
-/* Programa de hoy con aspecto de entrada de cine */
+/* sombra para que el título se lea encima de la foto */
+.cupula h1 {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.estrella {
+  animation: brillar 2s ease-in-out infinite;
+}
+
 .entrada {
   background-color: rgba(27, 31, 75, 0.8);
   border: 2px dashed var(--color-principal);
@@ -138,43 +136,29 @@ section {
   padding: 16px 24px;
 }
 
-.estrella {
-  animation: brillar 2s ease-in-out infinite;
-}
-
-/* Misma animación, pero cada estrella a su ritmo */
-.lenta {
-  animation-duration: 3.5s;
-}
-
-.rapida {
-  animation-duration: 1.2s;
-}
-
-/* El título de la cúpula brilla un poco */
-.cupula h1 {
-  text-shadow: 0 0 12px rgba(255, 209, 102, 0.7);
-}
-
-.boton {
+/* botones */
+.boton,
+button {
   display: inline-block;
   padding: 10px 24px;
   background-color: var(--color-principal);
   color: var(--color-fondo);
-  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: bold;
+  text-decoration: none;
+  border: none;
   border-radius: var(--radio);
-  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* Al pasar el ratón, el botón cambia de color poco a poco */
 .boton:hover,
 button:hover {
   background-color: var(--color-secundario);
-  color: var(--color-texto);
 }
 
-/* 7. Tarjetas de constelaciones: Grid */
+/* tarjetas */
 .tarjetas {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -187,66 +171,14 @@ button:hover {
   padding: 16px;
   border-radius: var(--radio);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s;
 }
 
 .tarjeta:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(127, 167, 255, 0.4);
 }
 
-.tarjeta img {
-  border-radius: var(--radio);
-  transition: transform 0.3s;
-}
-
-/* La imagen crece un poco al pasar el ratón por la tarjeta */
-.tarjeta:hover img {
-  transform: scale(1.05);
-}
-
-/* Mitos: imagen a la izquierda y texto a la derecha (Flexbox) */
-.mito {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 24px;
-  padding: 16px;
-  background-color: var(--color-fondo-claro);
-  border-radius: var(--radio);
-}
-
-.mito img {
-  width: 40%;
-  border-radius: var(--radio);
-}
-
-/* Galería de imágenes (Grid) */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-figure {
-  margin: 0;
-  background-color: var(--color-fondo-claro);
-  padding: 10px;
-  border-radius: var(--radio);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-figure img {
-  border-radius: var(--radio);
-}
-
-figcaption {
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 6px;
-}
-
-/* Etiqueta "Nuevo" encima de la tarjeta */
+/* la tarjeta tiene position: relative, así la etiqueta se coloca dentro de ella */
 .etiqueta {
   position: absolute;
   top: 10px;
@@ -259,7 +191,40 @@ figcaption {
   font-weight: bold;
 }
 
-/* Caja de dato curioso */
+/* mitos */
+.mito {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: var(--color-fondo-claro);
+  border-radius: var(--radio);
+}
+
+.mito img {
+  width: 40%;
+}
+
+/* galería */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+figure {
+  margin: 0;
+  background-color: var(--color-fondo-claro);
+  padding: 10px;
+  border-radius: var(--radio);
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
 .dato-curioso {
   border: 2px dotted var(--color-secundario);
   border-radius: var(--radio);
@@ -267,7 +232,6 @@ figcaption {
   background-color: rgba(127, 167, 255, 0.1);
 }
 
-/* Vídeo e iframe */
 video,
 iframe {
   width: 100%;
@@ -279,17 +243,15 @@ iframe {
   border: 0;
 }
 
-/* Mapa del cielo */
+/* mapa del cielo */
 .mapa {
   text-align: center;
 }
 
 .mapa img {
   border-radius: 50%;
-  box-shadow: 0 0 30px rgba(127, 167, 255, 0.4);
 }
 
-/* Leyenda del mapa: cada estación lleva un borde izquierdo de su color */
 .leyenda {
   display: flex;
   flex-wrap: wrap;
@@ -310,7 +272,7 @@ iframe {
 .verano { border-left: 8px solid #ff9f6b; }
 .otono { border-left: 8px solid #ffd166; }
 
-/* JavaScript: botones de filtro de constelaciones */
+/* clases que pone el JavaScript */
 .filtros {
   display: flex;
   flex-wrap: wrap;
@@ -318,39 +280,23 @@ iframe {
   margin-bottom: 20px;
 }
 
-/* El JS pone esta clase a las tarjetas que no coinciden con el filtro */
 .oculta {
   display: none;
 }
 
-/* JavaScript: "Apagar las luces". El JS pone la clase apagada en el body */
-header,
-nav,
-main section,
-aside,
-footer {
-  transition: opacity 0.6s;
-}
-
 .apagada header,
 .apagada nav,
-.apagada main section,
+.apagada section,
 .apagada aside,
 .apagada footer {
   opacity: 0.15;
 }
 
-/* La cúpula sigue encendida y brilla más */
 .apagada .cupula {
   opacity: 1;
-  box-shadow: 0 0 80px rgba(255, 209, 102, 0.5);
 }
 
-#boton-dato {
-  margin-top: 10px;
-}
-
-/* 8. Tabla de horarios */
+/* tablas */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -368,17 +314,12 @@ td {
   text-align: left;
 }
 
-/* La fila se ilumina al pasar el ratón */
-tbody tr:hover {
-  background-color: rgba(127, 167, 255, 0.2);
-}
-
 th {
   background-color: var(--color-fondo-claro);
   color: var(--color-principal);
 }
 
-/* 9. Formulario */
+/* formulario */
 form {
   background-color: var(--color-fondo-claro);
   padding: 20px;
@@ -396,34 +337,20 @@ label {
   margin-top: 10px;
 }
 
-/* Los radio y el checkbox van en la misma línea que su texto */
+/* radio y checkbox en la misma línea que su texto */
 .opcion {
   display: inline;
   margin-right: 16px;
 }
 
-/* La clase "campo" está en las cajas de texto, el select y el textarea */
 .campo {
   width: 100%;
   padding: 8px;
   font-family: inherit;
-  border-radius: 6px;
   border: 1px solid #999999;
+  border-radius: 6px;
 }
 
-button {
-  padding: 10px 24px;
-  background-color: var(--color-principal);
-  color: var(--color-fondo);
-  font-family: inherit;
-  font-weight: bold;
-  border: none;
-  border-radius: var(--radio);
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* 10. Pie de página */
 footer {
   background-color: var(--color-fondo-claro);
   text-align: center;
@@ -431,7 +358,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* 11. Animaciones */
+/* animaciones */
 @keyframes brillar {
   0% { opacity: 1; }
   50% { opacity: 0.3; }
@@ -444,7 +371,7 @@ footer {
   100% { transform: translateY(0); }
 }
 
-/* 12. Responsive: tablet */
+/* tablet */
 @media (max-width: 800px) {
   .tarjetas,
   .galeria {
@@ -452,14 +379,17 @@ footer {
   }
 }
 
-/* Responsive: móvil */
+/* móvil */
 @media (max-width: 500px) {
   .tarjetas,
   .galeria {
     grid-template-columns: 1fr;
   }
 
-  /* Menú: los enlaces siguen en fila pero más pequeños */
+  main {
+    padding: 10px;
+  }
+
   nav ul {
     gap: 4px;
     padding: 6px;
@@ -470,16 +400,15 @@ footer {
     font-size: 0.85rem;
   }
 
-  /* Logo y títulos más pequeños */
-  .logo {
-    width: 56px;
-  }
-
   h1 {
     font-size: 1.6rem;
   }
 
-  /* En los mitos, la imagen pasa arriba del texto */
+  .cupula {
+    padding: 50px 10px 30px;
+    border-radius: 150px 150px 0 0;
+  }
+
   .mito {
     flex-direction: column;
   }
@@ -492,26 +421,17 @@ footer {
     height: 220px;
   }
 
-  .cupula {
-    padding: 50px 10px 30px;
-    border-radius: 150px 150px 0 0;
-  }
-
-  /* La tabla se hace más compacta para que quepa en 360 px */
   th,
   td {
     padding: 4px;
     font-size: 0.8rem;
   }
-
-  main {
-    padding: 10px;
-  }
 }
 
-/* Pantallas grandes: el contenido puede ser un poco más ancho */
-@media (min-width: 1300px) {
-  main {
-    max-width: 1150px;
+/* quien tiene activado "reducir movimiento" no ve las animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .logo,
+  .estrella {
+    animation: none;
   }
 }
