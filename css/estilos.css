@@ -111,7 +111,7 @@ section {
 
 /* portada */
 .cupula {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Stars_Circle_over_the_Residencia_at_Cerro_Paranal.jpg/960px-Stars_Circle_over_the_Residencia_at_Cerro_Paranal.jpg");
+  background-image: url("../img/fondo-estrellas.webp");
   background-size: cover;
   padding: 80px 20px 40px;
   border-radius: 300px 300px 0 0;
